@@ -8,9 +8,7 @@ class CommentsDAO:
 
     def get_by_post_id(self, id):
         result_comments = []
-        result_post_id = []
         for comment in self.load_comments():
-            result_post_id.append(comment['post_id'])
             if comment['post_id'] == id:
                 result_comments.append(comment)
         return result_comments
