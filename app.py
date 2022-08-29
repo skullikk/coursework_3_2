@@ -1,14 +1,15 @@
 from flask import Flask, jsonify
 
+
 from posts.views import post_blueprint
 
 app = Flask(__name__)
 app.register_blueprint(post_blueprint)
 
+
 @app.route('/api/posts/')
 def page_posts_json():
-    data = {'name': 'Alice'}
-    return jsonify(data)
+    pass
 
 @app.errorhandler(404)
 def page_error_1(error):
