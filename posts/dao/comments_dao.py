@@ -1,6 +1,6 @@
 import json
 
-class CommetsDAO:
+class CommentsDAO:
 
     def load_comments(self):
         with open('./data/comments.json', 'r', encoding='utf-8') as file:
@@ -13,6 +13,4 @@ class CommetsDAO:
             result_post_id.append(comment['post_id'])
             if comment['post_id'] == id:
                 result_comments.append(comment)
-        if id not in result_post_id:
-            raise ValueError('Нет такого поста')
         return result_comments

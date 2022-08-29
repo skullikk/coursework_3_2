@@ -28,6 +28,10 @@ class PostsDAO:
         return result_search
 
     def get_by_pk(self, pk):
+        result_post_id = []
         for post in self.load_posts():
+            result_post_id.append(post['pk'])
             if post['pk'] == pk:
                 return post
+        if pk not in result_post_id:
+            raise ValueError('Нет такого поста')
