@@ -10,7 +10,7 @@ app.json.ensure_ascii = False
 
 logger = logging.getLogger('api_logger')
 logger.setLevel('INFO')
-f_handler = logging.FileHandler('./logs/api.log', mode='w')
+f_handler = logging.FileHandler('./logs/api.log', mode='a')
 logger.addHandler(f_handler)
 f = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
 f_handler.setFormatter(f)
